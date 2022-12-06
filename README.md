@@ -2,7 +2,7 @@
 
 A new Flutter plugin to create Pinned shortcuts for Android similer to Messenger chat bubble.
 
-## Shortcut
+## Screenshot
 
 ![Screenshot 2022-12-06 at 12 10 03](https://user-images.githubusercontent.com/58891556/205899095-43387437-fddd-46c8-a3cb-98e89f55f8b8.png)
 
