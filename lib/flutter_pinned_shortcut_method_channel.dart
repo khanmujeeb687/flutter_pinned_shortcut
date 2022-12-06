@@ -10,8 +10,26 @@ class MethodChannelFlutterPinnedShortcut extends FlutterPinnedShortcutPlatform {
   final methodChannel = const MethodChannel('flutter_pinned_shortcut');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<String?> createPinnedShortcut({
+    required String id,
+    required String label,
+    required String action,
+    String? iconAssetName,
+  }) async {
+    return await methodChannel.invokeMethod("createPinnedShortcut", {
+      "id": id,
+      "shortLabel": label,
+      "action": action,
+      "iconAssetName": iconAssetName,
+    });
+  }
+
+  @override
+  Future<void> getLaunchAction(
+      void Function(String action) onActionReceived) async {
+    String? response = await methodChannel.invokeMethod("getLaunchAction");
+    if (response != null) {
+      onActionReceived(response);
+    }
   }
 }

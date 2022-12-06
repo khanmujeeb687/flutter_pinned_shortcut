@@ -8,7 +8,8 @@ abstract class FlutterPinnedShortcutPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FlutterPinnedShortcutPlatform _instance = MethodChannelFlutterPinnedShortcut();
+  static FlutterPinnedShortcutPlatform _instance =
+      MethodChannelFlutterPinnedShortcut();
 
   /// The default instance of [FlutterPinnedShortcutPlatform] to use.
   ///
@@ -23,7 +24,16 @@ abstract class FlutterPinnedShortcutPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
+  Future<String?> createPinnedShortcut({
+    required String id,
+    required String label,
+    required String action,
+    String? iconAssetName,
+  }) async {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  void getLaunchAction(void Function(String action) onActionReceived) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }
