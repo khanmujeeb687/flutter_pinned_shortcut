@@ -43,6 +43,7 @@ class _MyAppState extends State<MyApp> {
       id: "1",
       label: "Followers",
       action: "followers",
+      iconAssetName: "assets/icon.png"
     );
   }
 
