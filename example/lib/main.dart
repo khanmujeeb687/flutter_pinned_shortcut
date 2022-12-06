@@ -49,6 +49,7 @@ class _MyAppState extends State<MyApp> {
 
   void getIncomingAction() {
     _flutterPinnedShortcutPlugin.getLaunchAction((action) {
+      print(action);
       switch (action) {
         case "followers":
 
