@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-
-// import 'package:flutter_shortcuts/flutter_shortcuts.dart';
 import 'package:flutter_pinned_shortcut/flutter_pinned_shortcut.dart';
 
 void main() {
@@ -21,6 +16,12 @@ class _MyAppState extends State<MyApp> {
   final _flutterPinnedShortcutPlugin = FlutterPinnedShortcut();
 
   @override
+  void initState() {
+    super.initState();
+    getIncomingAction();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -28,13 +29,34 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: .... '),
+          child: ElevatedButton(
+            onPressed: addPinnedShortcut,
+            child: const Text("Add Pinned Shortcut"),
+          ),
         ),
       ),
     );
   }
 
+  void addPinnedShortcut() {
+    _flutterPinnedShortcutPlugin.createPinnedShortcut(
+      id: "1",
+      label: "Followers",
+      action: "followers",
+    );
+  }
 
-  void addPinnedShortcut(){
+  void getIncomingAction() {
+    _flutterPinnedShortcutPlugin.getLaunchAction((action) {
+      switch (action) {
+        case "followers":
+
+          ///navigate to follower screen.
+          break;
+        case "profile":
+
+        ///navigate to profile screen.
+      }
+    });
   }
 }
