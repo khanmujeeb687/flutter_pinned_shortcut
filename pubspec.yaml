@@ -1,8 +1,8 @@
 name: flutter_pinned_shortcut
 description: A new Flutter plugin to create Pinned shortcuts for Android similer to Messenger chat bubble.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/khanmujeeb687
-repository: https://github.com/appinioGmbH/flutter_packages/tree/main/packages/appinio_social_share
+repository: https://github.com/khanmujeeb687/flutter_pinned_shortcut
 
 
 environment:
