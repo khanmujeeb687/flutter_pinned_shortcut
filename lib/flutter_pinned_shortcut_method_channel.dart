@@ -20,7 +20,7 @@ class MethodChannelFlutterPinnedShortcut extends FlutterPinnedShortcutPlatform {
       "id": id,
       "shortLabel": label,
       "action": action,
-      "iconAssetName": iconAssetName,
+      "icon": iconAssetName,
     });
   }
 
